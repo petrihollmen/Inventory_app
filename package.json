@@ -1,0 +1,27 @@
+{
+  "name": "inventory_app",
+  "version": "1.0.0",
+  "description": "Inventory management web app for Sailcraft Co. – a sailing boat retailer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petrihollmen/Inventory_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/petrihollmen/Inventory_app/issues"
+  },
+  "homepage": "https://github.com/petrihollmen/Inventory_app#readme",
+  "dependencies": {
+    "better-sqlite3": "^12.8.0",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.3.2"
+  }
+}

@@ -28,26 +28,26 @@ function initDatabase() {
     `);
 
     const products = [
-      { name: 'Wireless Keyboard', category: 'Electronics', sku: 'ELEC-001', quantity: 45, price: 49.99, description: 'Compact wireless keyboard with long battery life' },
-      { name: 'USB-C Hub', category: 'Electronics', sku: 'ELEC-002', quantity: 30, price: 34.99, description: '7-in-1 USB-C hub with HDMI, USB 3.0, and SD card reader' },
-      { name: 'Noise Cancelling Headphones', category: 'Electronics', sku: 'ELEC-003', quantity: 20, price: 129.99, description: 'Over-ear headphones with active noise cancellation' },
-      { name: 'Laptop Stand', category: 'Office', sku: 'OFFC-001', quantity: 60, price: 29.99, description: 'Adjustable aluminum laptop stand for better ergonomics' },
-      { name: 'Ergonomic Mouse', category: 'Electronics', sku: 'ELEC-004', quantity: 55, price: 39.99, description: 'Vertical ergonomic mouse to reduce wrist strain' },
-      { name: 'Desk Organizer', category: 'Office', sku: 'OFFC-002', quantity: 80, price: 19.99, description: 'Multi-compartment bamboo desk organizer' },
-      { name: 'Monitor Light Bar', category: 'Electronics', sku: 'ELEC-005', quantity: 25, price: 44.99, description: 'LED monitor light bar with adjustable color temperature' },
-      { name: 'Mechanical Pencils Set', category: 'Stationery', sku: 'STAT-001', quantity: 120, price: 12.99, description: 'Pack of 6 mechanical pencils with extra lead refills' },
-      { name: 'Sticky Notes Bulk Pack', category: 'Stationery', sku: 'STAT-002', quantity: 200, price: 8.99, description: 'Assorted color sticky notes, 12 pads included' },
-      { name: 'Cable Management Kit', category: 'Electronics', sku: 'ELEC-006', quantity: 40, price: 15.99, description: 'Velcro cable ties and clips for organized cables' },
-      { name: 'Standing Desk Mat', category: 'Office', sku: 'OFFC-003', quantity: 35, price: 54.99, description: 'Anti-fatigue mat for standing desks, ergonomic design' },
-      { name: 'Blue Light Glasses', category: 'Accessories', sku: 'ACCSS-001', quantity: 70, price: 24.99, description: 'Blue light blocking glasses to reduce eye strain' },
-      { name: 'Whiteboard Markers Set', category: 'Stationery', sku: 'STAT-003', quantity: 150, price: 9.99, description: 'Dry-erase markers in 8 colors with eraser' },
-      { name: 'Webcam HD 1080p', category: 'Electronics', sku: 'ELEC-007', quantity: 18, price: 69.99, description: 'Full HD webcam with built-in microphone and auto-focus' },
-      { name: 'Wireless Charger Pad', category: 'Electronics', sku: 'ELEC-008', quantity: 50, price: 22.99, description: '15W fast wireless charging pad, Qi compatible' },
-      { name: 'File Cabinet', category: 'Furniture', sku: 'FURN-001', quantity: 10, price: 149.99, description: '3-drawer metal file cabinet with lock' },
-      { name: 'Printer Paper A4', category: 'Stationery', sku: 'STAT-004', quantity: 500, price: 6.99, description: 'A4 80gsm premium printer paper, 500 sheets per ream' },
-      { name: 'Bookshelf Organizer', category: 'Furniture', sku: 'FURN-002', quantity: 15, price: 89.99, description: '5-tier wooden bookshelf for home or office use' },
-      { name: 'Name Badge Holders', category: 'Accessories', sku: 'ACCSS-002', quantity: 250, price: 4.99, description: 'Clear plastic name badge holders with lanyards, 50-pack' },
-      { name: 'Desk Lamp LED', category: 'Electronics', sku: 'ELEC-009', quantity: 38, price: 32.99, description: 'Touch-control LED desk lamp with USB charging port' }
+      { name: 'Beneteau Oceanis 46.1', category: 'Boats', sku: 'BOAT-001', quantity: 4, price: 189900.00, description: '46 ft cruising yacht with 3-cabin layout, furling mainsail and bow thruster. Ideal for blue-water passages.' },
+      { name: 'Jeanneau Sun Odyssey 49', category: 'Boats', sku: 'BOAT-002', quantity: 3, price: 229500.00, description: '49 ft performance cruiser with twin-wheel steering, lifting keel option and spacious cockpit.' },
+      { name: 'Bavaria C50', category: 'Boats', sku: 'BOAT-003', quantity: 2, price: 259000.00, description: '50 ft luxury cruising yacht offering 5 cabins, carbon rig and premium Lewmar deck hardware.' },
+      { name: 'Hallberg-Rassy 48 MkII', category: 'Boats', sku: 'BOAT-004', quantity: 2, price: 495000.00, description: '48 ft Swedish-built offshore cruiser renowned for seaworthiness, quality finish and centre-cockpit design.' },
+      { name: 'Mainsail – Standard', category: 'Sails', sku: 'SAIL-001', quantity: 15, price: 1299.00, description: 'Dacron mainsail suitable for cruising boats up to 35 ft.' },
+      { name: 'Furling Genoa Jib', category: 'Sails', sku: 'SAIL-002', quantity: 10, price: 899.00, description: 'High-performance furling jib with UV-resistant leech tape.' },
+      { name: 'Asymmetric Spinnaker', category: 'Sails', sku: 'SAIL-003', quantity: 7, price: 1699.00, description: 'Nylon asymmetric spinnaker for downwind speed. Vibrant colour options.' },
+      { name: 'Storm Jib', category: 'Sails', sku: 'SAIL-004', quantity: 9, price: 549.00, description: 'Heavy-weather storm jib, ISO 9650 compliant. 4 oz laminate cloth.' },
+      { name: 'Standing Rigging Set', category: 'Rigging', sku: 'RIG-001', quantity: 5, price: 1150.00, description: 'Full stainless steel standing rigging set for 30–35 ft keelboats.' },
+      { name: 'Running Rigging Kit', category: 'Rigging', sku: 'RIG-002', quantity: 11, price: 499.00, description: 'Complete running rigging kit with halyards, sheets and control lines.' },
+      { name: 'Stainless Shackles Pack', category: 'Rigging', sku: 'RIG-003', quantity: 60, price: 34.99, description: 'Marine-grade stainless steel snap shackles, pack of 10.' },
+      { name: 'Roller Furling System', category: 'Rigging', sku: 'RIG-004', quantity: 8, price: 679.00, description: 'Aluminium foil roller furling system, fits forestays up to 15 m.' },
+      { name: 'Adult Life Jacket (ISO)', category: 'Safety', sku: 'SAFE-001', quantity: 40, price: 129.99, description: '150 N ISO 12402-3 approved inflatable life jacket. Auto/manual inflate.' },
+      { name: 'Child Life Jacket', category: 'Safety', sku: 'SAFE-002', quantity: 25, price: 79.99, description: 'Buoyancy aid for children 15–30 kg. CE certified, bright orange.' },
+      { name: 'Safety Harness & Tether', category: 'Safety', sku: 'SAFE-003', quantity: 18, price: 89.99, description: 'Offshore safety harness with 2 m double-clip tether. EN ISO 12401.' },
+      { name: 'Marine VHF Radio', category: 'Navigation', sku: 'NAV-001', quantity: 14, price: 219.00, description: 'Waterproof floating VHF radio, 6 W output, DSC channel 70.' },
+      { name: 'GPS Chart Plotter', category: 'Navigation', sku: 'NAV-002', quantity: 6, price: 849.00, description: '7-inch touchscreen GPS chart plotter with pre-loaded coastal charts.' },
+      { name: 'Marine Compass', category: 'Navigation', sku: 'NAV-003', quantity: 20, price: 149.00, description: 'Flush-mount binnacle compass, compensated, high-visibility card.' },
+      { name: 'Antifouling Paint (5 L)', category: 'Maintenance', sku: 'MAINT-001', quantity: 30, price: 89.99, description: 'Self-polishing copper antifouling paint for GRP and steel hulls.' },
+      { name: 'Boat Fender Set', category: 'Accessories', sku: 'ACC-001', quantity: 35, price: 59.99, description: 'Set of 4 inflatable PVC fenders with adjustable mooring lines.' }
     ];
 
     const insertMany = db.transaction((products) => {

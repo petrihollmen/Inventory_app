@@ -1,9 +1,10 @@
 {
   "name": "inventory_app",
   "version": "1.0.0",
-  "description": "This is used for the inventory app",
-  "main": "index.js",
+  "description": "Inventory management web app for Sailcraft Co. – a sailing boat retailer",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/petrihollmen/Inventory_app#readme",
   "dependencies": {
     "better-sqlite3": "^12.8.0",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.3.2"
   }
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inventory Manager</title>
+  <title>Sailcraft Co. – Inventory</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -14,11 +14,11 @@
     <div class="header-inner">
       <div class="logo">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-          <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-          <line x1="12" y1="22.08" x2="12" y2="12"/>
+          <path d="M12 2L2 20h20L12 2z"/>
+          <line x1="12" y1="2" x2="12" y2="20"/>
+          <path d="M2 20 Q12 14 22 20"/>
         </svg>
-        <span>Inventory Manager</span>
+        <span>Sailcraft Co.</span>
       </div>
       <button class="btn btn-primary" id="addProductBtn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -85,7 +85,8 @@
       </table>
       <div id="emptyState" class="empty-state" style="display:none;">
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+          <circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="22"/>
+          <path d="M5 15l7 7 7-7"/><line x1="5" y1="10" x2="19" y2="10"/>
         </svg>
         <p>No products found</p>
         <span>Try adjusting your search or add a new product</span>

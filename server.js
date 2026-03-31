@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const rateLimit = require('express-rate-limit');
 const { initDatabase } = require('./database');
 
 const app = express();
@@ -9,6 +10,16 @@ const db = initDatabase();
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+
+const apiLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests, please try again later.' }
+});
+
+app.use('/api/', apiLimiter);
 
 // GET all products (with optional search/category filter)
 app.get('/api/products', (req, res) => {
@@ -35,6 +46,7 @@ app.get('/api/products', (req, res) => {
     const products = db.prepare(query).all(...params);
     res.json(products);
   } catch (err) {
+    console.error('GET /api/products error:', err);
     res.status(500).json({ error: 'Failed to retrieve products' });
   }
 });
@@ -48,6 +60,7 @@ app.get('/api/products/:id', (req, res) => {
     }
     res.json(product);
   } catch (err) {
+    console.error(`GET /api/products/${req.params.id} error:`, err);
     res.status(500).json({ error: 'Failed to retrieve product' });
   }
 });
@@ -58,6 +71,7 @@ app.get('/api/categories', (req, res) => {
     const categories = db.prepare('SELECT DISTINCT category FROM products ORDER BY category ASC').all();
     res.json(categories.map(c => c.category));
   } catch (err) {
+    console.error('GET /api/categories error:', err);
     res.status(500).json({ error: 'Failed to retrieve categories' });
   }
 });
@@ -88,6 +102,7 @@ app.post('/api/products', (req, res) => {
     if (err.message && err.message.includes('UNIQUE constraint failed')) {
       return res.status(400).json({ error: 'A product with this SKU already exists' });
     }
+    console.error('POST /api/products error:', err);
     res.status(500).json({ error: 'Failed to create product' });
   }
 });
@@ -125,6 +140,7 @@ app.put('/api/products/:id', (req, res) => {
     if (err.message && err.message.includes('UNIQUE constraint failed')) {
       return res.status(400).json({ error: 'A product with this SKU already exists' });
     }
+    console.error(`PUT /api/products/${req.params.id} error:`, err);
     res.status(500).json({ error: 'Failed to update product' });
   }
 });
@@ -151,6 +167,7 @@ app.patch('/api/products/:id/quantity', (req, res) => {
     const updated = db.prepare('SELECT * FROM products WHERE id = ?').get(id);
     res.json(updated);
   } catch (err) {
+    console.error(`PATCH /api/products/${req.params.id}/quantity error:`, err);
     res.status(500).json({ error: 'Failed to update quantity' });
   }
 });
@@ -166,6 +183,7 @@ app.delete('/api/products/:id', (req, res) => {
     db.prepare('DELETE FROM products WHERE id = ?').run(req.params.id);
     res.json({ message: 'Product deleted successfully' });
   } catch (err) {
+    console.error(`DELETE /api/products/${req.params.id} error:`, err);
     res.status(500).json({ error: 'Failed to delete product' });
   }
 });
